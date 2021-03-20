@@ -342,12 +342,11 @@ header {
 	}
 
 	.advantages-circle {
-		background-color: var(--gray-color);
-
 		width: 85%;
 		height: 85%;
 		border-radius: 100%;
-		background-color: var(--blue-color);
+
+		background-color: #d6d6d6;
 	}
 	.advantages-circle-heading {
 		height: 15%;
@@ -923,26 +922,82 @@ footer {
 	}
 
 	/*OUR-ADVANTAGES*/
+	.our-advantages-form {
+		height: 90%;
+		width: 75%;
+
+		justify-content: space-evenly;
+	}
+	.form-input {
+		height: 2rem;
+		width: 14rem;
+		margin-top: 0;
+
+	}
+	textarea.form-input {
+		padding: 0.5rem;
+	}
+
 	.advantages-block {
 		flex-direction: column;
 	}
 	.advantages-scheme-half, #form-half {
 		width: auto;
 	}
+	.advantages-form-half, #form-half {
+		display: flex;
+		justify-content: center;
+	}
 	.our-advantges-form-heading-block {
 		display: none;
 	}
 	.css-shapes-preview {
+		width: 75%;
 		left: 0;
 	 	transform: none;
 		-webkit-transform: none;
     }
 	.our-advantages-form {
-		top: 0;
-		left: 0;
+		top: 1rem;
+		left: initial;
+	}
+	.advantages-circle {
+		width: 55%;
+		height: 55%;
+	}
+	.scheme-block {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.circle-advantage-block {
+		width: 50%;
+		height: 11rem;
+		position: relative;
+	}
+	#form-but {
+		align-self: initial;
+		margin-top: 0;
+
+
 	}
 
-    .advantages-scheme-gray-circle {
+	#circle-guarantee, #circle-checkout {
+		left: 0;
+	}
+	#circle-certification {
+		left: 0;
+	}
+	#circle-delivery {
+		right: 0;
+	}
+	#advantages-heading>.heading-container {
+		padding: 1rem;
+	}
+	#advantages-heading>.heading-container>.page-heading {
+		color: black;
+	}
+
+	.advantages-scheme-gray-circle {
         display: none;
     }
 
@@ -967,6 +1022,12 @@ footer {
 	#our-works-heading-container {
 		padding: 1rem 2rem;
 		text-align: center;
+	}
+	#incomes-heading-container {
+		padding: 1rem;
+	}
+	#incomes-heading-container>.page-heading {
+		font-size: 30px;
 	}
 
 	/* OUR-CONTACTS */
