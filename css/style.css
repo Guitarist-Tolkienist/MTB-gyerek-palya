@@ -54,7 +54,7 @@ body {
 
 /* HEADER */
 header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	height: 10vh;
 
@@ -917,6 +917,9 @@ footer {
 	}
 
 	/*BIG-IMAGE*/
+	.big-image-part {
+		background-color: grey;
+	}
 	.big-image-part-heading-block {
 		display: none;
 	}
@@ -977,6 +980,9 @@ footer {
 	}
 	textarea.form-input {
 		padding: 0.5rem;
+	}
+	.our-advantages-form, .css-shapes-preview {
+		height: 22.5rem;
 	}
 
 	.advantages-block {
@@ -1082,6 +1088,9 @@ footer {
 	}
 
     /* OUR-INCOMES*/
+	.our-incomes-part {
+		margin-top: 7.5rem;
+	}
 	.income-left-text-block {
 		display: none;
 	}
