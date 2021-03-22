@@ -28,6 +28,9 @@ function drawOnCategories() {
     PaperBigCircle.fillColor = BigCircle.color
 
     var SmallCircle = new CanvCircle(BigCircle.x + 20, BigCircle.y, 65, DarkBlue)
+    if (window.matchMedia("(max-width: 400px)").matches) {
+        SmallCircle.radius = 25;
+    }
     var PaperSmallCircle = new paper.Path.Circle(new paper.Point(SmallCircle.x, SmallCircle.y), SmallCircle.radius);
     PaperSmallCircle.fillColor = SmallCircle.color
 
@@ -45,47 +48,66 @@ function drawOnCategoriesBigRightCurve() {
     // darkblue path
     var path = new paper.Path();
     path.fillColor = DarkBlue;
-    path.add(new paper.Point(canvas.offsetWidth, 20)); //1
-    path.add(new paper.Point(canvas.offsetWidth - 175, 30));//2
-    path.add(new paper.Point(30, 140));//3
-    path.add(new paper.Point(20, 235));//4
-    path.add(new paper.Point(60, 310));//5
-    path.add(new paper.Point(canvas.offsetWidth/2 - 70, 360))//7
-    path.add(new paper.Point(canvas.offsetWidth/2 - 30, 410))//8
-    path.add(new paper.Point(canvas.offsetWidth/2 - 5, 450))//10
-    path.add(new paper.Point(canvas.offsetWidth/2 - 15, 520))//11
-    path.add(new paper.Point(canvas.offsetWidth - 230, canvas.offsetHeight - 300));//12
-    path.add(new paper.Point(canvas.offsetWidth - 230, canvas.offsetHeight - 150));//13
-    path.add(new paper.Point(canvas.offsetWidth - 150, canvas.offsetHeight - 50));//14
-    path.add(new paper.Point(canvas.offsetWidth - 100, canvas.offsetHeight - 20));//15
-    path.add(new paper.Point(canvas.offsetWidth - 50 , canvas.offsetHeight - 10));//16
-    path.add(new paper.Point(canvas.offsetWidth , canvas.offsetHeight));//17
-    // path.closed = true;
-    // path.selected = true;
-    path.smooth()
+    if (window.matchMedia("(max-width: 400px)").matches) {
+        console.log('mobile')
 
-    // lightblue path
-    var path1 = new paper.Path();
-    path1.fillColor = LightBlue;
-    path1.add(new paper.Point(canvas.offsetWidth, 5)); //1
-    path1.add(new paper.Point(canvas.offsetWidth - 200, 25));//2
-    path1.add(new paper.Point(20, 135));//3
-    path1.add(new paper.Point(20, 270));//5
-    path1.add(new paper.Point(canvas.offsetWidth/2 - 100, 360))//10
-    path1.add(new paper.Point(canvas.offsetWidth/2 - 60, 410))//11
-    path1.add(new paper.Point(canvas.offsetWidth/2 - 45, 450))//12
-    path1.add(new paper.Point(canvas.offsetWidth/2 - 45, 520))//13
-    path1.add(new paper.Point(canvas.offsetWidth - 250, canvas.offsetHeight - 300));//14
-    path1.add(new paper.Point(canvas.offsetWidth - 240, canvas.offsetHeight - 150));//15
-    path1.add(new paper.Point(canvas.offsetWidth - 155, canvas.offsetHeight - 50));//16
-    path1.add(new paper.Point(canvas.offsetWidth - 100, canvas.offsetHeight - 15));//17
-    path1.add(new paper.Point(canvas.offsetWidth - 60 , canvas.offsetHeight - 5));//18
-    path1.add(new paper.Point(canvas.offsetWidth , canvas.offsetHeight));//19
-    // path.closed = true;
-    // path1.selected = true;
-    path1.smooth()
-    // path1.selected = true;
+        path.add(new paper.Point(canvas.offsetWidth, 0)); //1
+        path.add(new paper.Point(canvas.offsetWidth - 125, 30));//2
+        path.add(new paper.Point(40, 90));//3
+        path.add(new paper.Point(20, 140));//4
+        path.add(new paper.Point(40, 190));//5
+        path.add(new paper.Point(canvas.offsetWidth/2 - 20, canvas.offsetHeight/2 + 20));//6
+        path.add(new paper.Point(canvas.offsetWidth/2, canvas.offsetHeight - 115));//7
+        path.add(new paper.Point(canvas.offsetWidth/2 - 10, canvas.offsetHeight - 55));//8
+        path.add(new paper.Point(canvas.offsetWidth/2 + 50, canvas.offsetHeight - 10));//9
+        path.add(new paper.Point(canvas.offsetWidth, canvas.offsetHeight));//10
+        path.add(new paper.Point(canvas.offsetWidth, canvas.offsetHeight/2));//11
 
+        // path.closed = true;
+        // path.selected = true;
+        path.smooth()
+    } else {
+        path.add(new paper.Point(canvas.offsetWidth, 20)); //1
+        path.add(new paper.Point(canvas.offsetWidth - 175, 30));//2
+        path.add(new paper.Point(30, 140));//3
+        path.add(new paper.Point(20, 235));//4
+        path.add(new paper.Point(60, 310));//5
+        path.add(new paper.Point(canvas.offsetWidth / 2 - 70, 360))//7
+        path.add(new paper.Point(canvas.offsetWidth / 2 - 30, 410))//8
+        path.add(new paper.Point(canvas.offsetWidth / 2 - 5, 450))//10
+        path.add(new paper.Point(canvas.offsetWidth / 2 - 15, 520))//11
+        path.add(new paper.Point(canvas.offsetWidth - 230, canvas.offsetHeight - 300));//12
+        path.add(new paper.Point(canvas.offsetWidth - 230, canvas.offsetHeight - 150));//13
+        path.add(new paper.Point(canvas.offsetWidth - 150, canvas.offsetHeight - 50));//14
+        path.add(new paper.Point(canvas.offsetWidth - 100, canvas.offsetHeight - 20));//15
+        path.add(new paper.Point(canvas.offsetWidth - 50, canvas.offsetHeight - 10));//16
+        path.add(new paper.Point(canvas.offsetWidth, canvas.offsetHeight));//17
+        // path.closed = true;
+        // path.selected = true;
+        path.smooth()
+
+        // lightblue path
+        var path1 = new paper.Path();
+        path1.fillColor = LightBlue;
+        path1.add(new paper.Point(canvas.offsetWidth, 5)); //1
+        path1.add(new paper.Point(canvas.offsetWidth - 200, 25));//2
+        path1.add(new paper.Point(20, 135));//3
+        path1.add(new paper.Point(20, 270));//5
+        path1.add(new paper.Point(canvas.offsetWidth / 2 - 100, 360))//10
+        path1.add(new paper.Point(canvas.offsetWidth / 2 - 60, 410))//11
+        path1.add(new paper.Point(canvas.offsetWidth / 2 - 45, 450))//12
+        path1.add(new paper.Point(canvas.offsetWidth / 2 - 45, 520))//13
+        path1.add(new paper.Point(canvas.offsetWidth - 250, canvas.offsetHeight - 300));//14
+        path1.add(new paper.Point(canvas.offsetWidth - 240, canvas.offsetHeight - 150));//15
+        path1.add(new paper.Point(canvas.offsetWidth - 155, canvas.offsetHeight - 50));//16
+        path1.add(new paper.Point(canvas.offsetWidth - 100, canvas.offsetHeight - 15));//17
+        path1.add(new paper.Point(canvas.offsetWidth - 60, canvas.offsetHeight - 5));//18
+        path1.add(new paper.Point(canvas.offsetWidth, canvas.offsetHeight));//19
+        // path.closed = true;
+        // path1.selected = true;
+        path1.smooth()
+        // path1.selected = true;
+    }
     paper.view.draw();
 }
 function drawOnCategoriesBigLeftCurve() {
@@ -99,48 +121,65 @@ function drawOnCategoriesBigLeftCurve() {
     // darkblue path
     var path = new paper.Path();
     path.fillColor = DarkBlue;
-    path.add(new paper.Point(0, 75 + 35)); //1
-    path.add(new paper.Point(100, 80 + 50)); //2
-    path.add(new paper.Point(150, 250)); //3
-    path.add(new paper.Point(225, 375)); //4
-    path.add(new paper.Point(300, 450)); //5
-    path.add(new paper.Point(375, 475)); //6
-    path.add(new paper.Point(450, 480)); //6
-    path.add(new paper.Point(510, 510)); //7
-    path.add(new paper.Point(540, 600)); //10
-    path.add(new paper.Point(475, 725)); //11
-    path.add(new paper.Point(285, 830)); //12
-    path.add(new paper.Point(200, 900)); //13
-    path.add(new paper.Point(125, 1075)); //14
-    path.add(new paper.Point(0, 1125)); //15
-    path.add(new paper.Point(0, 500)); //16
 
+    if (window.matchMedia("(max-width: 400px)").matches) {
+
+    } else {
+        path.add(new paper.Point(0, 75 + 35)); //1
+        path.add(new paper.Point(100, 80 + 50)); //2
+        path.add(new paper.Point(150, 250)); //3
+        path.add(new paper.Point(225, 375)); //4
+        path.add(new paper.Point(300, 450)); //5
+        path.add(new paper.Point(375, 475)); //6
+        path.add(new paper.Point(450, 480)); //6
+        path.add(new paper.Point(510, 510)); //7
+        path.add(new paper.Point(540, 600)); //10
+        path.add(new paper.Point(475, 725)); //11
+        path.add(new paper.Point(285, 830)); //12
+        path.add(new paper.Point(200, 900)); //13
+        path.add(new paper.Point(125, 1075)); //14
+        path.add(new paper.Point(0, 1125)); //15
+        path.add(new paper.Point(0, 500)); //16
+
+    }
     // path.closed = true;
     // path.selected = true;
     path.smooth()
 
-
     // lightblue path
     var path1 = new paper.Path();
     path1.fillColor = LightBlue;
-    path1.add(new paper.Point(0, 75 + 15)); //1
-    path1.add(new paper.Point(115, 80 + 35)); //2
-    path1.add(new paper.Point(170, 250)); //3
 
-    path1.add(new paper.Point(235, 415)); //4
-    path1.add(new paper.Point(300, 480)); //5
-    path1.add(new paper.Point(375, 495)); //6
+    if (window.matchMedia("(max-width: 400px)").matches) {
+        path1.add(new paper.Point(0, 0)); //1
 
-    path1.add(new paper.Point(450, 490)); //6
-    path1.add(new paper.Point(530, 510)); //7
-    path1.add(new paper.Point(560, 600)); //10
-    path1.add(new paper.Point(500, 725)); //11
+        path1.add(new paper.Point(canvas.offsetWidth/2, canvas.offsetHeight/2 - 100)); //2
 
-    path1.add(new paper.Point(310, 840)); //12
-    path1.add(new paper.Point(225, 900)); //13
-    path1.add(new paper.Point(140, 1075)); //14
-    path1.add(new paper.Point(0, 1175)); //15
-    path1.add(new paper.Point(0, 500)); //16
+        path1.add(new paper.Point(canvas.offsetWidth, canvas.offsetHeight/2)); //3
+
+        path1.add(new paper.Point(canvas.offsetWidth/2, canvas.offsetHeight/2 + 100)); //4
+
+        path1.add(new paper.Point(0, canvas.offsetHeight)); //6
+    } else {
+        path1.add(new paper.Point(0, 75 + 15)); //1
+        path1.add(new paper.Point(115, 80 + 35)); //2
+        path1.add(new paper.Point(170, 250)); //3
+
+        path1.add(new paper.Point(235, 415)); //4
+        path1.add(new paper.Point(300, 480)); //5
+        path1.add(new paper.Point(375, 495)); //6
+
+        path1.add(new paper.Point(450, 490)); //6
+        path1.add(new paper.Point(530, 510)); //7
+        path1.add(new paper.Point(560, 600)); //10
+        path1.add(new paper.Point(500, 725)); //11
+
+        path1.add(new paper.Point(310, 840)); //12
+        path1.add(new paper.Point(225, 900)); //13
+        path1.add(new paper.Point(140, 1075)); //14
+        path1.add(new paper.Point(0, 1175)); //15
+        path1.add(new paper.Point(0, 500)); //16
+    }
     path1.smooth()
     // path1.selected = true;
     paper.view.draw();
@@ -276,6 +315,12 @@ function drawOnOurContactsBigRightCurve() {
 
 // Only executed our code once the DOM is ready.
 window.onload = function() {
+    if (window.matchMedia("(max-width: 400px)").matches) {
+        console.log('here we go')
+    } else {
+        console.log('here we go1')
+    }
+
     drawOnCategories()
     drawOnCategoriesBigRightCurve()
     drawOnCategoriesBigLeftCurve()

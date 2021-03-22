@@ -315,6 +315,10 @@ header {
 	/*border: solid ;*/
 }
 
+.catalog-heading-block {
+	display: none;
+}
+
 /* ADVANTAGES-PART */
 .our-advantages-part {
 	margin-top: 3rem;
@@ -957,14 +961,48 @@ footer {
 	}
 	.category-block {
 		width: 40%;
+
+		margin-top: 0;
 	}
 	#categoriesCanvas {
 		left: 0;
+
+		width: 100px;
+		height: 100px;
 	}
 	#categoriesBigCanvasRight,  #categoriesBigCanvasLeft{
-		display: none;
+		/*display: none;*/
+	}
+	#categoriesBigCanvasRight {
+		position: absolute;
+		top: -45%;
+		right: 0;
+		height: 70%;
+		width: 15rem;
+		/*border: solid;*/
+	}
+	#categoriesBigCanvasLeft {
+		position: absolute;
+		bottom: -17rem;
+		left: 0;
+		z-index: 90;
+		height: 35rem;
+		width: 75%;
+		/*border: solid;*/
 	}
 
+	.catalog-heading-block {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 100%;
+		padding: 1rem 2.5rem;
+	}
+	.catalog-heading {
+		font-size: 35px;
+		font-weight: 800;
+	}
 	/*OUR-ADVANTAGES*/
 	.our-advantages-form {
 		height: 90%;
