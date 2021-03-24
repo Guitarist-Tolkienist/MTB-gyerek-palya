@@ -32,7 +32,9 @@ body {
 	src: url("fonts/FRAHV.TTF");
 }
 :root {
-	--blue-color: #76c7c0;
+	--blue-color: rgba(59,173,182,0.5);
+	--solid-blue-color: rgba(59,173,182);
+
 	--dark-text-blue-color: #6ab3ac;
 	--pink-color: #f29999;
 	--gray-color: #f4f2f3;
@@ -53,8 +55,54 @@ body {
 }
 
 /* HEADER */
+.headers-numbers-block {
+	width: 100%;
+	padding: 5px 5rem;
+
+	display: flex;
+	justify-content: space-between;
+
+	background-color: var(--gray-color);
+	font-size: 20px;
+	/*border: solid;*/
+}
+.numbers-block{
+	display: flex;
+	align-items: center;
+
+	/*border: solid;*/
+}
+.header-numbers {
+	transition-duration: 1s;
+}
+.header-numbers:hover {
+	transform: scale(1.1);
+}
+.header-numbers p {
+	margin: 0;
+	margin-right: 2rem;
+}
+.header-numbers a {
+	color: inherit;
+	text-decoration: none;
+}
+.little-heading-block p {
+	margin: 0;
+}
+#headerCanvas {
+	width: 9rem;
+	height: 8rem;
+
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+	z-index: -5;
+
+	/*border: solid;*/
+}
+
 .navbar {
-	background-color: var(--blue-color);
+	background-color: var(--solid-blue-color);
 
 	transition-duration: 1.1s;
 
@@ -62,7 +110,7 @@ body {
 }
 .navbar:hover {
 	transition-duration: .6s;
-	background-color: var(--blue-color);
+	background-color: var(--solid-blue-color);
 }
 .navbar-brand {
 	/*width: 10%;*/
@@ -86,7 +134,10 @@ body {
 .nav-item-list {
 	width: 75%;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
+}
+.nav-item {
+	margin-right: 5rem;
 }
 .nav-item-list {
 	font-size: 20px;
@@ -240,7 +291,14 @@ body {
 	justify-content: center;
 
 	border-radius: 10px;
-	box-shadow: 8px 8px 20px 2px rgb(74 95 101 / 50%);
+
+	box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.4), /* cнизу */
+
+				-3px -3px 15px 1px #FFFFFF, /* сверху */
+
+				5px 5px 10px 1px rgba(0,0,0,0.4), /* справа */
+
+				-3px -3px 15px 1px #FFFFFF /* слева */
 }
 	.category-block-image-block {
 		height: 80%;
@@ -365,7 +423,8 @@ body {
 		height: 85%;
 		border-radius: 100%;
 
-		background-color: #d6d6d6;
+		background-color: rgb(244 242 243);;
+		box-shadow: 7px 8px 14px 0px rgba(0,0,0,0.5);
 	}
 	.advantages-circle-heading {
 		height: 15%;
@@ -562,7 +621,10 @@ body {
 
 	padding: 0.5rem;
 
-	box-shadow: 8px 8px 20px 2px rgb(74 95 101 / 50%);
+	box-shadow: 6px 6px 15px 1px rgba(0,0,0,0.4), /* cнизу */
+				-7px -7px 20px 1px #FFFFFF, /* сверху */
+				6px 6px 15px 1px rgba(0,0,0,0.4), /* справа */
+				-7px -7px 20px 1px #FFFFFF; /* слева */
 	border-radius: 20px;
 
 	/*border: solid black 2px;*/
@@ -737,10 +799,13 @@ body {
 
 		padding: 1.8rem;
 	}
-		#google-map {
+		#google-map-mob, #google-map {
 			width: 100%;
 			height: 100%;
 			border: 0;
+		}
+		#google-map-mob {
+			display: none;
 		}
 .our-contacts-heading-block {
 	height: 6rem;
@@ -868,6 +933,9 @@ body {
 	margin-top: 0.5em;
 	text-align: center;
 }
+#mobile-map-block {
+	display: none;
+}
 
 
 #our-contacts-empty-block {
@@ -936,17 +1004,41 @@ footer {
 
 /* MEDIA */
 
-@media screen and (max-width: 375px ) {
+@media screen and (max-width: 400px ) {
 	body {
 		overflow-x: hidden;
 	}
 
 	/* HEADER*/
+	.headers-numbers-block {
+		justify-content: center;
+	}
+	.header-numbers {
+		display: none;
+	}
+	.header-numbers p {
+		margin: 0;
+	}
+	.header-numbers:first-child {
+		display: initial;
+	}
+	.little-heading-block {
+		display: none;
+	}
+
+	#hamburger-button {
+		margin-left: 80%;
+	}
 	.navbar-collapse.collapse.show {
-		background-color: var(--blue-color);
+		background-color: var(--solid-blue-color);
 	}
 	.nav-item-list {
 		align-items: center;
+
+		width: 100%;
+	}
+	.nav-item {
+		margin-right: 0;
 	}
 
 	/*BIG-IMAGE*/
@@ -1097,6 +1189,9 @@ footer {
 
 	}
 
+	.advantages-circle-heading {
+		margin-top: 0.75rem;
+	}
 	#circle-guarantee, #circle-checkout {
 		left: 0;
 	}
@@ -1180,7 +1275,7 @@ footer {
 	.our-incomes-part {
 		margin-top: 7.5rem;
 
-		z-index: -5;
+		z-index: 5;
 	}
 	.income-left-text-block {
 		display: none;
@@ -1202,21 +1297,25 @@ footer {
 		padding-top: 0;
 	}
 	.income-card {
+		display: none;
 		background-color: whitesmoke;
 		margin-left: -60%;
 		z-index: 4;
 
-		height: 275px;
-		width: 50%;
+		height: 245px;
+		width: 45%;
 
 		overflow: hidden;
+
 	}
 	.income-card:first-child {
+		display: initial;
 		margin-left: 0;
 
 		z-index: 5;
 	}
 	.income-card:last-child {
+		display: initial;
 		z-index: 3;
 	}
 
@@ -1321,6 +1420,15 @@ footer {
 	.our-contacts-content {
 		font-size: 15px;
 		font-weight: bold;
+	}
+	#mobile-map-block{
+		padding: 1rem;
+		padding-top: 0;
+	}
+	#mobile-map-block, #google-map-mob {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 	/* FOOTER */
 	footer {

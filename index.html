@@ -19,13 +19,27 @@
     <script src="js/myPaper.js"></script>
 
     <header class="fixed-top">
+        <div class="headers-numbers-block">
+            <div class="numbers-block">
+                <div class="header-numbers">
+                    <p><a href="tel:+38 093 000 00 00">+38 093 000 00 00</a></p>
+                </div>
+                <div class="header-numbers">
+                    <p><a href="tel:+38 093 000 00 00">+38 093 000 00 00</a></p>
+                </div>
+            </div>
+            <div class="little-heading-block">
+                <p>Напиши нам!</p>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark animated fadeInDown" id="navigation">
+            <img class=" navbar-brand navbar-logo-image" src="img/icons/logoMdbZ.webp" alt="logoImage">
             <button class="navbar-toggler" id="hamburger-button" type="button" data-toggle="collapse" data-target="#navbarSupportContent" aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportContent">
-                <ul class="navbar-nav nav-item-list m-auto">
+                <ul class="navbar-nav nav-item-list">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Про нас</a>
                     </li>
@@ -44,6 +58,8 @@
                     </button>
                 </form>
             </div>
+
+            <canvas id="headerCanvas" resize></canvas>
         </nav>
     </header>
 
@@ -325,6 +341,12 @@
                             <p>www@ukr.net</p>
                             <p>www@gmail.com</p>
                             <p>м. Чернігів, Україна (14005)</p>
+                        </div>
+
+                        <div class="our-contacts-map-block" id="mobile-map-block">
+                            <iframe id="google-map-mob" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21278.296449122063!2d23.110362424960083!3d48.191454220562015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473831c84a39158d%3A0x9686f44c3743ca30!2z0JLQtdC70LjQutCw0Y8g0JrQvtC_0LDQvdGPLCDQl9Cw0LrQsNGA0L_QsNGC0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDkwMzMw!5e0!3m2!1sru!2sua!4v1614945254482!5m2!1sru!2sua"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
                 </div>

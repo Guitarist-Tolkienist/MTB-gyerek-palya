@@ -1,5 +1,6 @@
 var LightBlue = "rgba(206,233,237, 0.5)";
-var DarkBlue = "rgba(125,197,205,0.5)";
+var DarkBlue = "rgba(59,173,182,0.5)";
+var DarkBlueSolid = "rgba(59,173,182)";
 
 var DarkPink = "rgba(245,212,196, 0.5)";
 var LightPink = "rgba(242,225,216, 0.5)";
@@ -14,6 +15,19 @@ class CanvCircle {
         this.radius = radius;
         this.color = color;
     }
+}
+
+function drawOnHeader() {
+    // Get a reference to the canvas object
+    var canvas = document.getElementById('headerCanvas');
+    // Create an empty project and a view for the canvas:
+    paper.setup(canvas);
+
+    var BigCircle = new CanvCircle(canvas.offsetHeight/2, canvas.offsetHeight/2, canvas.offsetHeight/2, DarkBlueSolid)
+    var PaperBigCircle = new paper.Path.Circle(new paper.Point(BigCircle.x, BigCircle.y), BigCircle.radius);
+    PaperBigCircle.fillColor = BigCircle.color
+
+    paper.view.draw();
 }
 
 function drawOnCategories() {
@@ -386,11 +400,12 @@ function drawOnOurContactsBigRightCurve() {
 // Only executed our code once the DOM is ready.
 window.onload = function() {
     if (window.matchMedia("(max-width: 400px)").matches) {
-        console.log('here we go')
+        console.log('mobile')
     } else {
-        console.log('here we go1')
+        console.log('pc')
     }
 
+    drawOnHeader()
     drawOnCategories()
     drawOnCategoriesBigRightCurve()
     drawOnCategoriesBigLeftCurve()
